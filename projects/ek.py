@@ -14,7 +14,7 @@ def run():
         st.header('Flow models', divider=True)
 
         # Variables
-        samplesize_ms = 50
+        samplesize_ms = 10
         samplerate_target = 44100
         samplesize_samples = int(samplesize_ms /1000 * samplerate_target)
         filter_window = 10
