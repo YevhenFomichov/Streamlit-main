@@ -13,13 +13,13 @@ def plot_old_new(old_data, new_data, title):
     
     st.pyplot(fig)
 
-
 def main():
-    plt.rcParams["figure.figsize"] = (10,4)
+    plt.rcParams["figure.figsize"] = (10, 4)
 
     st.sidebar.title("Menu")
     project = st.sidebar.radio('Which project would you like to test:', 
-                               ['Combined MDI', 'MDI', 'DPI', 'VX', 'EK'])
+                               ['Combined MDI', 'MDI', 'DPI', 'VX', 'EK'], 
+                               key='project_selector')
 
     if project == 'Combined MDI':
         combined_mdi.run()
@@ -30,8 +30,8 @@ def main():
     elif project == 'VX':
         vx.run()
     elif project == 'EK':
-        ek.run()
-        ek_old.run()
+        old_data = ek_old.run()
+        new_data = ek.run()
         plot_old_new(old_data, new_data, 'EK')
 
 if __name__ == "__main__":
