@@ -1,6 +1,18 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-from projects import combined_mdi, mdi, dpi, vx, ek
+from projects import combined_mdi, mdi, dpi, vx, ek, ek_old
+
+def plot_old_new(old_data, new_data, title):
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
+    
+    ax1.plot(old_data['x'], old_data['y'])
+    ax1.set_title('Old Model ' + title)
+    
+    ax2.plot(new_data['x'], new_data['y'])
+    ax2.set_title('New Model ' + title)
+    
+    st.pyplot(fig)
+
 
 def main():
     plt.rcParams["figure.figsize"] = (10,4)
@@ -19,6 +31,8 @@ def main():
         vx.run()
     elif project == 'EK':
         ek.run()
+        ek_old.run()
+        plot_old_new(old_data, new_data, 'EK')
 
 if __name__ == "__main__":
     main()
