@@ -18,10 +18,10 @@ def main():
         dpi.run()
     elif project == 'VX':
         vx.run()
-    # elif project == 'EK':
-    #    ek.run()
-    elif project == 'EK_old':
-        ek_old.run()
+    elif project == 'EK':
+        ek.run()
+    #elif project == 'EK_old':
+    #    ek_old.run()
 
 if __name__ == "__main__":
     main()
