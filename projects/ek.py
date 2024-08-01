@@ -24,7 +24,7 @@ def run():
         diff_thr = 30
 
         # Model
-        flow_model = models.load_tflite_model("./models/model_flow_sono_ek_original.tflite")
+        flow_model = models.load_tflite_model("./models/model_flow_sono_ek.tflite")
 
         # Data
         audio = audio_processing.load_and_process_audio(uploaded_file, samplerate_target, transformation='standardize')
